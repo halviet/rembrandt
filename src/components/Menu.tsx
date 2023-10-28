@@ -1,10 +1,9 @@
 'use client'
 
-import React, {useState} from 'react';
+import React from 'react';
 import Link from "next/link";
 import {cn} from "@/lib/utils";
 import {quintessential} from "@/lib/fonts";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 import {AnimatePresence, motion} from "framer-motion";
 import MenuItem from "@/components/MenuItem";
@@ -15,12 +14,6 @@ interface MenuProps {
 }
 
 const Menu = ({isOpen, onClose}: MenuProps) => {
-  const [show, setShow] = useState<boolean[]>([false, false, false, false])
-
-  const variants = {
-    visible: {y: 0},
-    hidden: {y: "-100%"}
-  }
 
   return (
       <AnimatePresence>

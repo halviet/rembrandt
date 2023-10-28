@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import localFont from "@next/font/local";
 import {helvetica} from "@/lib/fonts";
-
-
 
 export const metadata: Metadata = {
   title: 'Rembrandt',
