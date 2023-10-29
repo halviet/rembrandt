@@ -1,6 +1,7 @@
 import React from 'react';
 import {cn} from "@/lib/utils";
 import {quintessential} from "@/lib/fonts";
+import Link from "next/link";
 
 interface FooterProps {
   className?: string
@@ -18,10 +19,18 @@ const Footer = ({className}: FooterProps) => {
               >©Rembrandt 2023</span>
           <nav className="w-full md:w-auto">
             <ul className="flex w-full justify-between gap-5 uppercase">
-              <li>Biography</li>
-              <li>Gallery</li>
-              <li>Tickets</li>
-              <li>Contacts</li>
+              <Link href="/biography">
+                <li>Biography</li>
+              </Link>
+              <Link href="/gallery">
+                <li>Gallery</li>
+              </Link>
+              <Link href="/tickets">
+                <li>Tickets</li>
+              </Link>
+              <Link href="/contacts">
+                <li>Contacts</li>
+              </Link>
             </ul>
           </nav>
           <ul className="hidden md:flex md:gap-5">

@@ -18,7 +18,7 @@ const Menu = ({isOpen, onClose}: MenuProps) => {
 
   return (
       <AnimatePresence>
-          {
+        {
             isOpen && (
                 <motion.div
                     initial={{y: "-100%"}}
@@ -54,24 +54,32 @@ const Menu = ({isOpen, onClose}: MenuProps) => {
                           quintessential.className
                       )}
                   >
-                    <MenuItem img={"/img/menu-1.png"}>
-                      <h3><sup>01</sup>Biography</h3>
-                    </MenuItem>
+                    <Link href="/biography" className="w-full">
+                      <MenuItem img={"/img/menu-1.png"}>
+                        <h3><sup>01</sup>Biography</h3>
+                      </MenuItem>
+                    </Link>
 
-                    <MenuItem img={"/img/menu-2.png"}>
-                      <h3><sup>02</sup>Gallery</h3>
-                    </MenuItem>
+                    <Link href="/gallery" className="w-full">
+                      <MenuItem img={"/img/menu-2.png"}>
+                        <h3><sup>02</sup>Gallery</h3>
+                      </MenuItem>
+                    </Link>
 
-                    <MenuItem img={"/img/menu-3.png"}>
-                      <h3><sup>03</sup>Tickets</h3>
-                    </MenuItem>
+                    <Link href="/tickets" className="w-full">
+                      <MenuItem img={"/img/menu-3.png"}>
+                        <h3><sup>03</sup>Tickets</h3>
+                      </MenuItem>
+                    </Link>
 
-                    <MenuItem img={"/img/menu-4.png"}>
-                      <h3><sup>04</sup>Contacts</h3>
-                    </MenuItem>
+                    <Link href="/contacts" className="w-full">
+                      <MenuItem img={"/img/menu-4.png"}>
+                        <h3><sup>04</sup>Contacts</h3>
+                      </MenuItem>
+                    </Link>
                   </div>
 
-                  <Footer className="lg:hidden flex w-full items-center justify-between text-black p-5 md:w-[720px] md:mx-auto md:px-0 lg:max-w-[1560px] lg:w-full lg:px-20" />
+                  <Footer className="lg:hidden flex w-full items-center justify-between text-black p-5 md:w-[720px] md:mx-auto md:px-0 lg:max-w-[1560px] lg:w-full lg:px-20"/>
                 </motion.div>
             )
         }
