@@ -6,17 +6,19 @@ import {cn} from "@/lib/utils";
 import {quintessential} from "@/lib/fonts";
 import Menu from "@/components/Menu";
 import Button from "@/components/ui/Button";
+import {ClassValue} from "clsx";
 
 interface HeaderProps {
   className?: string
+  logoClass?: ClassValue
+  menuClass?: string
 }
 
-const Header = ({className}: HeaderProps) => {
+const Header = ({className, logoClass, menuClass}: HeaderProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const onOpen = () => {
     setIsOpen(true)
-    console.log("fack")
   }
 
   const onClose = () => {
@@ -35,13 +37,15 @@ const Header = ({className}: HeaderProps) => {
             <li
                 className={cn(
                     quintessential.className,
-                    "text-lg"
+                    "text-lg",
+                    logoClass
                 )}
-            >Rembrandt
+            >
+              Rembrandt
             </li>
           </Link>
           <Button onClick={onOpen}>
-            <li className="text-base uppercase underline">Menu</li>
+            <li className={cn("text-base uppercase underline", menuClass)}>Menu</li>
           </Button>
         </ul>
 

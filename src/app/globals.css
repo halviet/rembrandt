@@ -6,3 +6,11 @@
   font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
   font-style: normal
 }
+
+.scroll-snap-type {
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-snap {
+  scroll-snap-align: center;
+}

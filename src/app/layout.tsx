@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-snap-type">
       <body className={helvetica.className}>{children}</body>
     </html>
   )

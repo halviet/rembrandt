@@ -1,30 +1,25 @@
 import React from 'react';
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 import {quintessential} from "@/lib/fonts";
 import {cn} from "@/lib/utils";
 import Link from "next/link";
 
 interface ChapterProps {
   children: React.ReactNode
+  title?: string
+  description?: string
   date?: string
   header?: string
+  img?: string
 }
 
-const Chapter = ({children, date, header}: ChapterProps) => {
+const Chapter = ({children, date, header, title, description, img = "/img/1.png"}: ChapterProps) => {
   return (
-      <div className="flex">
+      <section className="flex scroll-snap">
         <div className="h-screen relative w-full min-w-[530px] max-w-[830px]">
-          <div
-              className={cn(
-                  quintessential.className,
-                  "absolute z-10 text-white"
-              )}
-          >Rembrandt
-          </div>
           <div className="h-full flex flex-col items-center justify-end overflow-hidden w-full">
             <Image
-                src="/img/1.png"
+                src={img}
                 alt="Rembrandt"
                 fill
                 className="object-cover"
@@ -33,17 +28,11 @@ const Chapter = ({children, date, header}: ChapterProps) => {
         </div>
 
         <div className="w-full flex flex-col items-center py-12">
-          <div className="flex flex-col items-center justify-between w-[720px] h-full mx-4">
-            <div className="w-full flex flex-col items-end mb-12">
-              <Button>
-                MENU
-              </Button>
-            </div>
-
+          <div className="flex flex-col items-center justify-between w-[720px] h-full mx-4 mt-12">
             <div className="">
               <div className="text-center mb-24 text-lg">
-                <span>Preface.</span>
-                <p>Rembrandt biography and personal life</p>
+                <span>{title}</span>
+                <p>{description}</p>
               </div>
 
               <div className={cn(
@@ -73,7 +62,7 @@ const Chapter = ({children, date, header}: ChapterProps) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
   );
 };
 
