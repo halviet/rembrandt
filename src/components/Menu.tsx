@@ -7,6 +7,7 @@ import {quintessential} from "@/lib/fonts";
 import Button from "@/components/ui/Button";
 import {AnimatePresence, motion} from "framer-motion";
 import MenuItem from "@/components/MenuItem";
+import Footer from "@/components/Footer";
 
 interface MenuProps {
   isOpen: boolean,
@@ -17,7 +18,7 @@ const Menu = ({isOpen, onClose}: MenuProps) => {
 
   return (
       <AnimatePresence>
-        {
+          {
             isOpen && (
                 <motion.div
                     initial={{y: "-100%"}}
@@ -27,10 +28,10 @@ const Menu = ({isOpen, onClose}: MenuProps) => {
                       ease: "easeOut"
                     }}
                     exit={{y: "-100%"}}
-                    className="bg-white z-50 w-screen h-screen absolute top-0 left-0 overflow-hidden"
+                    className="bg-white z-50 w-screen h-screen absolute top-0 left-0 overflow-hidden flex flex-col justify-between"
                 >
-                  <div className="absolute w-full top-0 z-50">
-                    <ul className="flex w-full items-center justify-between text-black p-5 md:w-[720px] md:m-auto md:px-0 lg:max-w-[1560px] lg:w-full lg:px-20">
+                  <div className="lg:absolute w-full top-0 z-50">
+                    <ul className="flex w-full items-center justify-between text-black p-5 md:w-[720px] md:mx-auto md:px-0 lg:max-w-[1560px] lg:w-full lg:px-20">
                       <Link href={"/"}>
                         <li
                             className={cn(
@@ -49,7 +50,7 @@ const Menu = ({isOpen, onClose}: MenuProps) => {
 
                   <div
                       className={cn(
-                          "text-black w-full max-h-screen h-screen flex",
+                          "text-black w-full lg:max-h-screen lg:h-screen flex flex-col gap-12 lg:flex-row lg:gap-0",
                           quintessential.className
                       )}
                   >
@@ -66,9 +67,11 @@ const Menu = ({isOpen, onClose}: MenuProps) => {
                     </MenuItem>
 
                     <MenuItem img={"/img/menu-4.png"}>
-                      <h3><sup>04</sup>Tickets</h3>
+                      <h3><sup>04</sup>Contacts</h3>
                     </MenuItem>
                   </div>
+
+                  <Footer className="lg:hidden flex w-full items-center justify-between text-black p-5 md:w-[720px] md:mx-auto md:px-0 lg:max-w-[1560px] lg:w-full lg:px-20" />
                 </motion.div>
             )
         }

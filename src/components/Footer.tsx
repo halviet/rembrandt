@@ -2,13 +2,13 @@ import React from 'react';
 import {cn} from "@/lib/utils";
 import {quintessential} from "@/lib/fonts";
 
-const Footer = () => {
+interface FooterProps {
+  className?: string
+}
+
+const Footer = ({className}: FooterProps) => {
   return (
-      <footer className="w-full">
-        <p className="text-sm uppercase min-w-[335px] max-w-[560px] md:text-lg">
-          Rembrandt Harmens van Rijn is a famous Dutch painter, engraver, the greatest of the masters of
-          chiaroscuro. He became the largest representative of the Golden Age of Dutch painting.
-        </p>
+      <footer className={cn("w-full", className)}>
         <div className="mt-14 flex w-full items-center justify-between md:mt-28">
               <span
                   className={cn(
